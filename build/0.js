@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 727:
+/***/ 729:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConceptModalPageModule", function() { return ConceptModalPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RootModalPageModule", function() { return RootModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__concept_modal__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__root_modal__ = __webpack_require__(191);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ConceptModalPageModule = (function () {
-    function ConceptModalPageModule() {
+var RootModalPageModule = (function () {
+    function RootModalPageModule() {
     }
-    return ConceptModalPageModule;
+    return RootModalPageModule;
 }());
-ConceptModalPageModule = __decorate([
+RootModalPageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__concept_modal__["a" /* ConceptModalPage */],
+            __WEBPACK_IMPORTED_MODULE_2__root_modal__["a" /* RootModalPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_2__concept_modal__["a" /* ConceptModalPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_2__root_modal__["a" /* RootModalPage */]),
         ],
     })
-], ConceptModalPageModule);
+], RootModalPageModule);
 
-//# sourceMappingURL=concept-modal.module.js.map
+//# sourceMappingURL=root-modal.module.js.map
 
 /***/ })
 

@@ -8,7 +8,6 @@ var simulation;
 
 let cnt = 1;
 
-
 //d3.json("graph.json", function(error, graph) {
 //  if (error) throw error;
 var graph = {

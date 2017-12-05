@@ -94049,6 +94049,11 @@ page-concept-modal ion-scroll {
   overflow: hidden;
 }
 
+page-concept-modal .next-step-btn {
+  padding-top: 32px;
+  font-size: 1.4em;
+}
+
 page-concept-modal .slide-zoom {
   text-align: left;
   vertical-align: top;
@@ -94061,23 +94066,28 @@ page-concept-modal #done-btn {
   bottom: 56px;
 }
 
+page-home #concept-web {
+  width: 100%;
+  height: 100%;
+}
+
 page-home #categories {
   position: absolute;
-  bottom: 16px;
-  left: 16px;
+  bottom: 12px;
+  left: 12px;
 }
 
 page-home #zoom-in {
   position: fixed;
   bottom: 12px;
-  right: 84px;
+  left: 12px;
   border: 2px solid;
 }
 
 page-home #zoom-out {
   position: fixed;
   bottom: 12px;
-  right: 12px;
+  left: 4.4em;
   border: 2px solid;
 }
 
@@ -94092,23 +94102,38 @@ page-home .toolbar-content .item {
   padding-left: 0px;
 }
 
+page-home svg {
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
 page-home .links line {
   stroke: #999;
+  stroke-width: 3px;
   stroke-opacity: 0.6;
 }
 
-page-home .nodes circle {
+page-home .nodes path {
   background-position: center;
-}
-
-page-home .nodes shape {
-  background-position: center;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  fill: #fff;
 }
 
 page-home .labels text {
-  pointer-events: none;
-  font: 0.8em sans-serif;
-  color: #fff;
+  /*pointer-events: none;*/
+  font: sans-serif;
+  font-size: 1.7em;
+  /*color: #fff;*/
+  text-anchor: middle;
+  dominant-baseline: text-before-edge;
+}
+
+page-home .labels rect {
+  fill: white;
+  opacity: 1;
 }
 
 page-root-modal {
@@ -94126,8 +94151,7 @@ page-root-modal .slide-zoom {
   height: 100%;
 }
 
-page-root-modal #done-btn {
-  position: absolute;
-  right: 16px;
-  bottom: 56px;
+page-root-modal .next-step-btn {
+  padding-top: 32px;
+  font-size: 1.4em;
 }

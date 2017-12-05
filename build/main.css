@@ -94044,6 +94044,10 @@ page-concept-modal {
   height: 100%;
 }
 
+page-concept-modal textarea {
+  resize: none;
+}
+
 page-concept-modal ion-scroll {
   min-height: 400px;
   overflow: hidden;

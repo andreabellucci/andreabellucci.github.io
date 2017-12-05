@@ -178,16 +178,18 @@ var ConceptModalPage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('slides'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */])
 ], ConceptModalPage.prototype, "slides", void 0);
 ConceptModalPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-concept-modal',template:/*ion-inline-start:"/Users/abellucc/Documents/Workspace/ionic-webby/src/pages/concept-modal/concept-modal.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n	<ion-slides #slides pager (ionSlideWillChange)="slideWillChange($event)" (ionSlideDidChange)="slideChanged()">\n		<ion-slide>\n			<!--<a *ngIf="!isConceptEmpty" padding (click)="gotoSlide( 1 )"> > Continue </a>-->\n			<ion-item>\n				<!--<ion-label floating>Insert the text of the new concept</ion-label>-->\n			<!--	<ion-input [(ngModel)]="concept"\n				(ionChange)="onTextInput($event)"\n				placeholder="Insert the text of the new concept..."></ion-input>-->\n				<ion-textarea  [(ngModel)]=\'concept\'\n				placeholder="Insert a concept..." (ionChange)="onTextInput($event)"></ion-textarea>\n			</ion-item>\n				<ion-label *ngIf="isConceptEmpty" padding color="red">You need to insert a concept to continue...</ion-label>\n        <div *ngIf="!isConceptEmpty" class="next-step-btn">\n   		     <a padding (click)="gotoSlide( 1 )"> > Next </a>\n   	     </div>\n    </ion-slide>\n<!--\n		<ion-slide>\n			<ion-searchbar\n				[(ngModel)]="query"\n				[showCancelButton]="shouldShowCancel"\n				(ionInput)="onInput($event)"\n				(ionCancel)="onCancel($event)">\n			</ion-searchbar>\n      <div class="next-step-btn">\n     <a padding (click)="setImageUrl( null )"> > Skip step (no image) </a>\n      </div>\n			<ion-scroll scrollY="true">\n				<ion-grid>\n					<ion-row>\n					 <ion-spinner text-center name="bubbles" *ngIf=showSpinner></ion-spinner>\n					 <ion-label *ngIf="noResults">No results!!! Please try with other search keywords</ion-label>\n					</ion-row>\n			 		<ion-row wrap *ngFor="let row of grid">\n				 		<ion-col width-33 *ngFor="let img of row" >\n					 		<img src="{{img.display_sizes[0].uri}}" (click)="selectImage($event)" >\n				 		</ion-col>\n			 		</ion-row>\n		 		</ion-grid>\n			</ion-scroll>\n		</ion-slide>\n-->\n		<ion-slide>\n			<ion-row radio-group [(ngModel)]="color" text-center>\n				<ion-col col-3 *ngFor="let c of colors">\n					<div class="color-picker" [ngClass]=c (click)="pickColor(c)"></div>\n				</ion-col>\n	  	</ion-row>\n      <div class="next-step-btn">\n		<!-- <a padding (click)="pickColor(\'black\')"> > Skip step (default color black) </a>-->\n			</div>\n		</ion-slide>\n\n		<ion-slide>\n			<!--<ion-label>Text:	</ion-label>\n			<p padding [ngClass]="\'text-\'+color" >{{concept}}</p>-->\n\n			<p>Concept: {{concept}}	</p>\n			<!--<ion-label>Selected image:	</ion-label>\n			<img padding *ngIf="imageUrl != null" [src]="imageUrl" />\n			<p padding *ngIf="imageUrl == null"> No image </p>\n			<ion-label>Selected color:	</ion-label>-->\n			<p>Selected color:	<span [ngClass]="\'text-\'+color"> {{color}} </span> </p>\n			<!--<a id="done-btn" text-uppercase (click)="dismiss( )"> done </a>-->\n			<button ion-button outline (click)="dismiss( false )">Dismiss</button>\n			<button ion-button outline (click)="dismiss( true )">Done!</button>\n		</ion-slide>\n\n	</ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/abellucc/Documents/Workspace/ionic-webby/src/pages/concept-modal/concept-modal.html"*/,
+        selector: 'page-concept-modal',template:/*ion-inline-start:"/Users/abellucc/Documents/Workspace/ionic-webby/src/pages/concept-modal/concept-modal.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n	<ion-slides #slides pager (ionSlideWillChange)="slideWillChange($event)" (ionSlideDidChange)="slideChanged()">\n		<ion-slide>\n			<!--<a *ngIf="!isConceptEmpty" padding (click)="gotoSlide( 1 )"> > Continue </a>-->\n			<ion-item>\n				<!--<ion-label floating>Insert the text of the new concept</ion-label>-->\n			<!--	<ion-input [(ngModel)]="concept"\n				(ionChange)="onTextInput($event)"\n				placeholder="Insert the text of the new concept..."></ion-input>-->\n				<ion-textarea  [(ngModel)]=\'concept\'\n				placeholder="Insert a concept to start..."\n				autocomplete="on"\n				autocorrect="on"\n				cols="140"\n				rows="10"\n				(ionChange)="onTextInput($event)"></ion-textarea>\n			</ion-item>\n				<ion-label *ngIf="isConceptEmpty" padding color="red">You need to insert a concept to continue...</ion-label>\n        <div *ngIf="!isConceptEmpty" class="next-step-btn">\n   		     <a padding (click)="gotoSlide( 1 )"> > Next </a>\n   	     </div>\n    </ion-slide>\n<!--\n		<ion-slide>\n			<ion-searchbar\n				[(ngModel)]="query"\n				[showCancelButton]="shouldShowCancel"\n				(ionInput)="onInput($event)"\n				(ionCancel)="onCancel($event)">\n			</ion-searchbar>\n      <div class="next-step-btn">\n     <a padding (click)="setImageUrl( null )"> > Skip step (no image) </a>\n      </div>\n			<ion-scroll scrollY="true">\n				<ion-grid>\n					<ion-row>\n					 <ion-spinner text-center name="bubbles" *ngIf=showSpinner></ion-spinner>\n					 <ion-label *ngIf="noResults">No results!!! Please try with other search keywords</ion-label>\n					</ion-row>\n			 		<ion-row wrap *ngFor="let row of grid">\n				 		<ion-col width-33 *ngFor="let img of row" >\n					 		<img src="{{img.display_sizes[0].uri}}" (click)="selectImage($event)" >\n				 		</ion-col>\n			 		</ion-row>\n		 		</ion-grid>\n			</ion-scroll>\n		</ion-slide>\n-->\n		<ion-slide>\n			<ion-row radio-group [(ngModel)]="color" text-center>\n				<ion-col col-3 *ngFor="let c of colors">\n					<div class="color-picker" [ngClass]=c (click)="pickColor(c)"></div>\n				</ion-col>\n	  	</ion-row>\n      <div class="next-step-btn">\n		<!-- <a padding (click)="pickColor(\'black\')"> > Skip step (default color black) </a>-->\n			</div>\n		</ion-slide>\n\n		<ion-slide>\n			<!--<ion-label>Text:	</ion-label>\n			<p padding [ngClass]="\'text-\'+color" >{{concept}}</p>-->\n\n			<p>Concept: {{concept}}	</p>\n			<!--<ion-label>Selected image:	</ion-label>\n			<img padding *ngIf="imageUrl != null" [src]="imageUrl" />\n			<p padding *ngIf="imageUrl == null"> No image </p>\n			<ion-label>Selected color:	</ion-label>-->\n			<p>Selected color:	<span [ngClass]="\'text-\'+color"> {{color}} </span> </p>\n			<!--<a id="done-btn" text-uppercase (click)="dismiss( )"> done </a>-->\n			<button ion-button outline (click)="dismiss( false )">Dismiss</button>\n			<button ion-button outline (click)="dismiss( true )">Done!</button>\n		</ion-slide>\n\n	</ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/abellucc/Documents/Workspace/ionic-webby/src/pages/concept-modal/concept-modal.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]])
 ], ConceptModalPage);
 
-var _a, _b, _c, _d, _e;
 //# sourceMappingURL=concept-modal.js.map
 
 /***/ }),
@@ -364,16 +366,18 @@ var RootModalPage = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('slides'),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Slides */])
 ], RootModalPage.prototype, "slides", void 0);
 RootModalPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-root-modal',template:/*ion-inline-start:"/Users/abellucc/Documents/Workspace/ionic-webby/src/pages/root-modal/root-modal.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n	<ion-slides #slides pager (ionSlideDidChange)="slideChanged()">\n		<ion-slide>\n			<ion-item>\n			<!-- <ion-input\n			 [(ngModel)]=\'concept\'\n			 placeholder="Insert a concept to start..."></ion-input> -->\n\n			 <ion-textarea  [(ngModel)]=\'concept\'\n 			 placeholder="Insert a concept to start..." (ionChange)="onChange($event)"></ion-textarea>\n\n		 </ion-item>\n		 <div *ngIf="concept.trim() !== \'\'" class="next-step-btn">\n		 <a padding (click)="setConcept()"> > Next </a>\n	 </div>\n	 </ion-slide>\n	 <!--\n		<ion-slide>\n\n			<ion-searchbar\n				[(ngModel)]="query"\n				[showCancelButton]="shouldShowCancel"\n				(ionInput)="onInput($event)"\n				(ionCancel)="onCancel($event)">\n			</ion-searchbar>\n			 <div class="next-step-btn">\n			<a padding (click)="setImageUrl( null )"> > Skip step (no image) </a>\n			 </div>\n			<ion-scroll scrollY="true">\n				<ion-grid>\n					<ion-row>\n					 <ion-spinner text-center name="bubbles" *ngIf=showSpinner></ion-spinner>\n					 <ion-label *ngIf="noResults">No results!!! Please try with other search keywords</ion-label>\n					</ion-row>\n			 		<ion-row wrap *ngFor="let row of grid">\n				 		<ion-col width-33 *ngFor="let img of row" >\n					 		<img src="{{img.display_sizes[0].uri}}" (click)="selectImage($event)" >\n				 		</ion-col>\n			 		</ion-row>\n		 		</ion-grid>\n			</ion-scroll>\n		</ion-slide>\n	-->\n		<ion-slide>\n			<ion-row radio-group [(ngModel)]="color" text-center>\n				<ion-col col-3 *ngFor="let c of colors">\n					<div class="color-picker" [ngClass]=c (click)="pickColor(c)"></div>\n				</ion-col>\n	  	</ion-row>\n			<div class="next-step-btn">\n		 <!--<a padding (click)="pickColor(\'black\')"> > Skip step (default color black) </a>-->\n			</div>\n		</ion-slide>\n\n		<ion-slide>\n			<p>Concept: {{concept}}	</p>\n			<!--<ion-label>Selected image:	</ion-label>\n			<img padding *ngIf="imageUrl != null" [src]="imageUrl" />\n			<p padding *ngIf="imageUrl == null"> No image </p>-->\n			<p>Selected color:	<span [ngClass]="\'text-\'+color"> {{color}} </span> </p>\n			<!--<p padding [ngClass]="\'text-\'+color" >You have chosen to use the {{color}} color.</p>-->\n			<!--<a id="done-btn" text-uppercase (click)="dismiss( )"> done </a>-->\n			<button ion-button outline (click)="dismiss( false )">Dismiss</button>\n			<button ion-button outline (click)="dismiss( true )">Done!</button>\n\n		</ion-slide>\n\n	</ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/abellucc/Documents/Workspace/ionic-webby/src/pages/root-modal/root-modal.html"*/,
+        selector: 'page-root-modal',template:/*ion-inline-start:"/Users/abellucc/Documents/Workspace/ionic-webby/src/pages/root-modal/root-modal.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n	<ion-slides #slides pager (ionSlideDidChange)="slideChanged()">\n		<ion-slide>\n			<ion-item>\n			<!-- <ion-input\n			 [(ngModel)]=\'concept\'\n			 placeholder="Insert a concept to start..."></ion-input> -->\n\n			 <ion-textarea  [(ngModel)]=\'concept\'\n 			 placeholder="Insert a concept to start..."\n			 autocomplete="on"\n			 autocorrect="on"\n			 cols="140"\n			 rows="10"\n			 (ionChange)="onChange($event)"></ion-textarea>\n\n		 </ion-item>\n		 <div *ngIf="concept.trim() !== \'\'" class="next-step-btn">\n		 <a padding (click)="setConcept()"> > Next </a>\n	 </div>\n	 </ion-slide>\n	 <!--\n		<ion-slide>\n\n			<ion-searchbar\n				[(ngModel)]="query"\n				[showCancelButton]="shouldShowCancel"\n				(ionInput)="onInput($event)"\n				(ionCancel)="onCancel($event)">\n			</ion-searchbar>\n			 <div class="next-step-btn">\n			<a padding (click)="setImageUrl( null )"> > Skip step (no image) </a>\n			 </div>\n			<ion-scroll scrollY="true">\n				<ion-grid>\n					<ion-row>\n					 <ion-spinner text-center name="bubbles" *ngIf=showSpinner></ion-spinner>\n					 <ion-label *ngIf="noResults">No results!!! Please try with other search keywords</ion-label>\n					</ion-row>\n			 		<ion-row wrap *ngFor="let row of grid">\n				 		<ion-col width-33 *ngFor="let img of row" >\n					 		<img src="{{img.display_sizes[0].uri}}" (click)="selectImage($event)" >\n				 		</ion-col>\n			 		</ion-row>\n		 		</ion-grid>\n			</ion-scroll>\n		</ion-slide>\n	-->\n		<ion-slide>\n			<ion-row radio-group [(ngModel)]="color" text-center>\n				<ion-col col-3 *ngFor="let c of colors">\n					<div class="color-picker" [ngClass]=c (click)="pickColor(c)"></div>\n				</ion-col>\n	  	</ion-row>\n			<div class="next-step-btn">\n		 <!--<a padding (click)="pickColor(\'black\')"> > Skip step (default color black) </a>-->\n			</div>\n		</ion-slide>\n\n		<ion-slide>\n			<p>Concept: {{concept}}	</p>\n			<!--<ion-label>Selected image:	</ion-label>\n			<img padding *ngIf="imageUrl != null" [src]="imageUrl" />\n			<p padding *ngIf="imageUrl == null"> No image </p>-->\n			<p>Selected color:	<span [ngClass]="\'text-\'+color"> {{color}} </span> </p>\n			<!--<p padding [ngClass]="\'text-\'+color" >You have chosen to use the {{color}} color.</p>-->\n			<!--<a id="done-btn" text-uppercase (click)="dismiss( )"> done </a>-->\n			<button ion-button outline (click)="dismiss( false )">Dismiss</button>\n			<button ion-button outline (click)="dismiss( true )">Done!</button>\n\n		</ion-slide>\n\n	</ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/abellucc/Documents/Workspace/ionic-webby/src/pages/root-modal/root-modal.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
+        __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]])
 ], RootModalPage);
 
-var _a, _b, _c, _d, _e;
 //# sourceMappingURL=root-modal.js.map
 
 /***/ }),
@@ -400,11 +404,11 @@ webpackEmptyAsyncContext.id = 200;
 
 var map = {
 	"../pages/concept-modal/concept-modal.module": [
-		729,
+		728,
 		1
 	],
 	"../pages/root-modal/root-modal.module": [
-		730,
+		729,
 		0
 	]
 };
@@ -433,9 +437,9 @@ module.exports = webpackAsyncContext;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__concept_modal_concept_modal__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__root_modal_root_modal__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(437);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(436);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_d3__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_d3__ = __webpack_require__(437);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -844,21 +848,22 @@ HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-home',template:/*ion-inline-start:"/Users/abellucc/Documents/Workspace/ionic-webby/src/pages/home/home.html"*/'<!--<ion-header *ngIf="!isStarted">\n  <ion-toolbar>\n\n		<ion-item >\n		 <ion-input\n		 [(ngModel)]=\'concept\'\n		 placeholder="Insert a concept to start..."></ion-input>\n	 </ion-item>\n		<button ion-button (click)="startWizard()" >start!</button>\n  </ion-toolbar>\n</ion-header>\n-->\n<ion-content text-center>\n	<button *ngIf="isStarted" ion-button id="zoom-in" outline (click)="zoomIn($event)">\n		<ion-icon name="add"></ion-icon>\n	</button>\n\n	<button *ngIf="isStarted" ion-button id="zoom-out" outline (click)="zoomOut($event)">\n		<ion-icon name="remove"></ion-icon>\n	</button>\n\n\n	<ion-fab bottom right>\n	 <button ion-fab (click)="startWizard($event)"><ion-icon name="add"></ion-icon></button>\n 	</ion-fab>\n	<!--\n	<div id="categories">\n		<ion-label padding>Categories:</ion-label>\n\n		<ion-row *ngFor="let category of categories">\n				<div class="category"\n				[ngClass]="category.color"></div>\n\n				<div [ngClass]="\'text-\'+category.color">{{category.name}}</div>\n		</ion-row>\n	</div>\n	-->\n  <div id="concept-web" (window:resize)="onResize($event)"></div>\n</ion-content>\n'/*ion-inline-end:"/Users/abellucc/Documents/Workspace/ionic-webby/src/pages/home/home.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* ModalController */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* ModalController */]])
 ], HomePage);
 
-var _a, _b, _c;
 //# sourceMappingURL=home.js.map
 
 /***/ }),
 
-/***/ 369:
+/***/ 368:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(370);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(388);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(369);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(387);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -866,7 +871,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 388:
+/***/ 387:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -877,7 +882,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(282);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(285);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(436);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(435);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(286);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_concept_modal_concept_modal__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_root_modal_root_modal__ = __webpack_require__(191);
@@ -939,7 +944,7 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 436:
+/***/ 435:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -985,5 +990,5 @@ MyApp = __decorate([
 
 /***/ })
 
-},[369]);
+},[368]);
 //# sourceMappingURL=main.js.map

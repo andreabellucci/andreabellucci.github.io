@@ -94140,6 +94140,10 @@ page-root-modal {
   height: 100%;
 }
 
+page-root-modal textarea {
+  resize: none;
+}
+
 page-root-modal ion-scroll {
   min-height: 400px;
   overflow: hidden;
